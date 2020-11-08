@@ -1,0 +1,37 @@
+<!Doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring Framework</title>
+</head>
+<body>
+<h1>Book List</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+    <tr>
+        <th>Books</th>
+    </tr>
+    </tr>
+    <tr th:each="author : ${authors}">
+        <td th:text="${author.id}"></td>
+        <td th:text="${author.firstName}"></td>
+        <td th:text="${author.lastName}"></td>
+        <td th:text="${author.books}"></td>
+
+        <!-- Below code is Not Working - it does not find author.books -->
+        <!--        <tr th:each="book : ${author.books}">-->
+        <!--            <td th:text="book.id"></td>-->
+        <!--            <td th:text="book.title"></td>-->
+        <!--            <td th:text="book.publisher"></td>-->
+        <!--        </tr>-->
+
+
+    </tr>
+</table>
+
+</body>
+</html>
