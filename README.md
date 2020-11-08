@@ -35,26 +35,26 @@ Learning Spring
 - Pet Clinic   
 
    Domain Model 
-   ![alt text](src/main/resources/images/PetClinic_Domain Modeld.png)  
+   ![alt text](src/main/resources/images/PetClinic_Domain_Model.png)  
    
    Data Access
-    ![alt text](src/main/resources/images/Pet_Clinic Data Access.png)
+    ![alt text](src/main/resources/images/Pet_Clinic_Data_Access.png)
     
    Database
-   ![alt text](src/main/resources/images/Pet_Clinic Database.png)
+   ![alt text](src/main/resources/images/Pet_Clinic_Database.png)
    
    Bean Profiles 
-    ![alt text](src/main/resources/images/Pet_Clinic BeanProfiles.png)
+    ![alt text](src/main/resources/images/Pet_Clinic_BeanProfiles.png)
     
    Caching
-   ![alt text](src/main/resources/images/Pet_Clinic Cache.png) 
+   ![alt text](src/main/resources/images/Pet_Clinic_Cache.png) 
    
    Transaction Management 
-   ![alt text](src/main/resources/images/PetClinic_Transaction Management.png)
+   ![alt text](src/main/resources/images/PetClinic_Transaction_Management.png)
    
     
    Exception Management 
-   ![alt text](src/main/resources/images/PetClinic_Exception Management.png)
+   ![alt text](src/main/resources/images/PetClinic_Exception_Management.png)
   
    AOP 
    ![alt text](src/main/resources/images/PetClinic_AOP_1.png)
@@ -76,16 +76,17 @@ Learning Spring
    WebJars to add jQuery , ...
    ![alt text](src/main/resources/images/PetClinic_WebJars.png)
    
-   ![alt text](src/main/resources/images/PetClinic_Using WebJars.png)
+   Using webjars
+   ![alt text](src/main/resources/images/PetClinic_Using_WebJars.png)
       
    Less
-   ![alt text](src/main/resources/images/PetClinic_Using Less.png)
+   ![alt text](src/main/resources/images/PetClinic_Using_Less.png)
    
    Java Based Configuration
-   ![alt text](src/main/resources/images/Pet_Clinic JavaBasedConfig.png)
+   ![alt text](src/main/resources/images/Pet_Clinic_JavaBasedConfig.png)
    
    Unit Test
-   ![alt text](src/main/resources/images/Pet_Clinic unitTests.png)
+   ![alt text](src/main/resources/images/Pet_Clinic_unitTests.png)
    
    
   -  PetClinic Run app - 
