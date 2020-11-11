@@ -1,9 +1,6 @@
 package com.ayan.spring.webapp;
 
-import com.ayan.spring.webapp.controller.ConstructorBasedInjectController;
-import com.ayan.spring.webapp.controller.MyController;
-import com.ayan.spring.webapp.controller.PropertyInjectController;
-import com.ayan.spring.webapp.controller.SetterInjectContoller;
+import com.ayan.spring.webapp.controller.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -33,6 +30,15 @@ public class WebappApplication {
 
         System.out.println("--- Primary Bean ");
         controller.sayHello();
+
+
+        System.out.println("--- i18 Controller --");
+        I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+        System.out.println(i18nController.sayHello());
+
+        PetController petController = ctx.getBean("petController", PetController.class);
+        System.out.println("--- The Best Pet is ---");
+        System.out.println(petController.whichPetIsTheBest());
 
     }
 

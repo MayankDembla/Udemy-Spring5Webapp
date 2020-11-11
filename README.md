@@ -19,6 +19,8 @@ Dependency Injection with Spring
    when no qualifier is defined , it will automatically take the primary bean
    
 - Spring Profiles 
-   Control your application in different Runtime Environment. 
-   
+   Control your application in different Runtime Environment. <br>
+   @Profile - using to set the profile of the class/service <br>
+    spring.profiles.active - need to set in properties. 
  
+ - Default Profile 
