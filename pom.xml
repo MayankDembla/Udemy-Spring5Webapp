@@ -14,7 +14,7 @@
 	</parent>
 	<groupId>com.ayan.spring</groupId>
 	<artifactId>webapp</artifactId>
-	<version>0.0.2</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<name>webapp</name>
 	<description>Learning spring Framework</description>
 
@@ -41,7 +41,7 @@
 
 	<scm>
 		<developerConnection>scm:git:https://github.com/MayankDembla/Udemy-Spring5Webapp.git</developerConnection>
-	  <tag>webapp-0.0.2</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 
