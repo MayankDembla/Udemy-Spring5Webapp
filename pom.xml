@@ -40,7 +40,7 @@
 	</build>
 
 	<scm>
-		<developerConnection>scm:git:git@github.com:MayankDembla/Udemy-Spring5Webapp.git</developerConnection>
+		<developerConnection>scm:git:https://github.com/MayankDembla/Udemy-Spring5Webapp.git</developerConnection>
 	</scm>
 
 
