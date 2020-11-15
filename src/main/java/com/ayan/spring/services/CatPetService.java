@@ -1,4 +1,4 @@
-package com.ayan.spring.webapp.services;
+package com.ayan.spring.services;
 
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;

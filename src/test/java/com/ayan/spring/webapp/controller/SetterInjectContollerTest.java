@@ -1,6 +1,6 @@
 package com.ayan.spring.webapp.controller;
 
-import com.ayan.spring.webapp.services.ConstructorBasedGreetingServiceImpl;
+import com.ayan.spring.services.ConstructorBasedGreetingServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

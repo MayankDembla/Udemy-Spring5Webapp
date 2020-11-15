@@ -1,4 +1,4 @@
-package com.ayan.spring.webapp.services;
+package com.ayan.spring.services;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.*;

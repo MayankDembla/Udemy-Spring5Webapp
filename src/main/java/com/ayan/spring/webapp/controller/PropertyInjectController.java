@@ -1,6 +1,6 @@
 package com.ayan.spring.webapp.controller;
 
-import com.ayan.spring.webapp.services.GreetingService;
+import com.ayan.spring.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;

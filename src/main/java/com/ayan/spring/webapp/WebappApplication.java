@@ -4,8 +4,10 @@ import com.ayan.spring.webapp.controller.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan(basePackages = "com.ayan.spring")
 public class WebappApplication {
 
     public static void main(String[] args) {

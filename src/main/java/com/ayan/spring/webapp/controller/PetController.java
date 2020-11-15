@@ -1,6 +1,6 @@
 package com.ayan.spring.webapp.controller;
 
-import com.ayan.spring.webapp.services.PetService;
+import com.ayan.spring.services.PetService;
 import org.springframework.stereotype.Controller;
 
 @Controller

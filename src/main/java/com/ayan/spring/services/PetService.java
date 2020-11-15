@@ -1,4 +1,4 @@
-package com.ayan.spring.webapp.services;
+package com.ayan.spring.services;
 
 public interface PetService {
 
