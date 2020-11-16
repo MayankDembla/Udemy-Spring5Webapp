@@ -8,9 +8,10 @@ public class JokeServiceImpl implements JokeService {
 
     private final ChuckNorrisQuotes chuckNorrisQuotes;
 
-    public JokeServiceImpl() {
-        this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+    public JokeServiceImpl(ChuckNorrisQuotes chuckNorrisQuotes) {
+        this.chuckNorrisQuotes = chuckNorrisQuotes; // Now this is not in Spring Context as it is coming from Jar
     }
+
 
     @Override
     public String getJoke() {
