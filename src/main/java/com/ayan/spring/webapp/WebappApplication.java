@@ -34,7 +34,9 @@ public class WebappApplication {
 
         System.out.println("--- Primary Bean ");
         controller.sayHello();
-
+        System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
+        System.out.println(ctx.getBean(GetterInjectedController.class).sayHello());
+        System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
 
         System.out.println("--- i18 Controller --");
         I18nController i18nController = (I18nController) ctx.getBean("i18nController");

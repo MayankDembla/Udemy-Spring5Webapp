@@ -1,5 +1,8 @@
 package com.ayan.spring.webapp.repository;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class GreetingRepositoryImpl implements GreetingRepository {
 
     @Override
