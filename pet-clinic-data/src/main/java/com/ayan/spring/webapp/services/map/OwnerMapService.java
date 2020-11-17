@@ -1,11 +1,13 @@
 package com.ayan.spring.webapp.services.map;
 
 import com.ayan.spring.webapp.model.Owner;
-import com.ayan.spring.webapp.services.CrudService;
+import com.ayan.spring.webapp.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class OwnerMapService extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+@Service
+public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Owner findById(Long id) {

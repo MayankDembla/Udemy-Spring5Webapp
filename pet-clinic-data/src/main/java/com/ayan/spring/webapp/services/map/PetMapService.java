@@ -1,11 +1,13 @@
 package com.ayan.spring.webapp.services.map;
 
 import com.ayan.spring.webapp.model.Pet;
-import com.ayan.spring.webapp.services.CrudService;
+import com.ayan.spring.webapp.services.PetService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
-public class PetMapService extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+@Service
+public class PetMapService extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
     public Set<Pet> findAll() {
