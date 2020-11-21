@@ -49,7 +49,7 @@ public class WebappApplication {
 
         System.out.println("External Property Configuration");
 
-        FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+        FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
 
         System.out.println(fakeDataSource.getUser());
         System.out.println(fakeDataSource.getPassword());
