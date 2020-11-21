@@ -33,7 +33,7 @@ public class GreetingServiceConfig {
 
     @Bean
     @Primary
-    @Profile("de")
+    @Profile("ge")
     GreetingService primaryGermanGreetingService(GreetingServiceFactory greetingServiceFactory) {
         return greetingServiceFactory.createGreetingService("de");
     }

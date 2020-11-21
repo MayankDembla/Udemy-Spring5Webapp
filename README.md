@@ -30,3 +30,6 @@
 5. Introduction to YML File. 
 
     - basic Structure of yml file.
+    
+    - Using Application.yml
+https://docs.spring.io/spring-boot/docs/current/reference/html/spring-boot-features.html#boot-features-external-config

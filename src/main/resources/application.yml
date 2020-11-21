@@ -1,0 +1,22 @@
+com:
+  ayan:
+    user: mayank
+    password: Mayank123
+    url: www.dembla.com
+  jms:
+    user: Dembla
+    password: Dembla123
+    url: www.mayank.com
+
+#File seperator
+---
+
+spring:
+  profiles: de
+
+com:
+  ayan:
+    jms:
+      user: ygDembla
+      password: tgDembla123
+      url: www.ygmayank.com
