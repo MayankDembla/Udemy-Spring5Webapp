@@ -20,5 +20,6 @@
    - Edit Configuration and add Environemnt variable. 
    - This will override the property file property. 
  
-   
+3. Using multiple properties
+      
    

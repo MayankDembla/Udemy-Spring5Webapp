@@ -2,6 +2,7 @@ package com.ayan.spring.webapp;
 
 import com.ayan.spring.webapp.controller.*;
 import com.ayan.spring.webapp.examplebeans.FakeDataSource;
+import com.ayan.spring.webapp.examplebeans.FakeJmsBroker;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -54,6 +55,13 @@ public class WebappApplication {
         System.out.println(fakeDataSource.getUser());
         System.out.println(fakeDataSource.getPassword());
         System.out.println(fakeDataSource.getUrl());
+
+        FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
+
+        System.out.println(fakeJmsBroker.getUser());
+        System.out.println(fakeJmsBroker.getPassword());
+        System.out.println(fakeJmsBroker.getUrl());
+
 
     }
 
