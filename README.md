@@ -19,7 +19,12 @@
 2. Accessing the System/OS level properties.
    - Edit Configuration and add Environemnt variable. 
    - This will override the property file property. 
+   - User @Autowire Environment env.getProperty("") to get he system property.
  
 3. Using multiple properties
+   
+4. Spring Boot Application properties (Default profile used by Spring)
+
+   remove the popertysources source and directly use it  
       
    
