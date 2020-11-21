@@ -17,4 +17,8 @@
   - create a property config and make bean of that pojo.
 
 2. Accessing the System/OS level properties.
-
+   - Edit Configuration and add Environemnt variable. 
+   - This will override the property file property. 
+ 
+   
+   
