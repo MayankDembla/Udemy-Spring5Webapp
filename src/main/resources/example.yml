@@ -1,0 +1,43 @@
+# this is comment
+
+# used to describe the data structure
+
+name: Mayank
+
+names: # Comment
+  - Mayank
+  - Jatin
+  - Uttam
+
+pound_sign: "#"
+
+
+book:
+  author: Joe Buck
+  publisher: random house
+
+truth: yes
+
+author_trust: True
+
+more_true: true
+
+false: no #NO, false ,FALSE
+
+string_val: "THis is it's quote"
+
+colon_string: "my course: one two three"
+
+include_new_lines:
+  nddf sdfsdf sdfsdf
+  fsdfs sdfsdf sdfsdf
+  we wewr werwr ewrrew
+
+ignore_new_lines: >
+  this is
+  just one long
+  String
+
+
+
+
