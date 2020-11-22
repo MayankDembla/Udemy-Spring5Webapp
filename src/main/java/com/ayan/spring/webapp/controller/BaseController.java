@@ -12,7 +12,7 @@ public class BaseController {
     // ## Get Post ## //
 
     // Testing a Get method ...
-    @RequestMapping(value = {"/test", ""}, method = RequestMethod.GET)
+    @GetMapping(value = {"/test", ""})
     public String testget() {
         return "Hello World";
     }

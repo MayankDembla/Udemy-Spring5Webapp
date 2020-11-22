@@ -21,3 +21,9 @@ Learning Spring
     Header key : value 
     
 6. @CookieValue - TODO
+
+## Response Annotations ##
+
+1. @ResponseBody
+
+2. @ExceptionHandler - Handles the Exception in Controller as a Custom one.
