@@ -27,3 +27,5 @@ Learning Spring
 1. @ResponseBody
 
 2. @ExceptionHandler - Handles the Exception in Controller as a Custom one.
+
+3. @ResponseStatus - use along with Exception handler.
