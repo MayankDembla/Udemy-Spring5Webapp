@@ -1,6 +1,7 @@
 package com.ayan.spring.webapp.controller;
 
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -78,4 +79,31 @@ public class BaseController {
                 + " Path Var : " + pid + " Request Param + " + param;
 
     }
+
+    // this adds the validation that header must have the key:val
+    @ResponseStatus(HttpStatus.I_AM_A_TEAPOT) // 403
+    @GetMapping(value = "/reqheadernew", headers = "key=val")
+    public String getFoosWithHeader() {
+        return "Get some Foos with Header";
+    }
+
+    @RequestMapping(
+            value = "/ex/foos",
+            method = RequestMethod.GET,
+            headers = "Accept=application/json")
+    @ResponseBody
+    public String getFoosAsJsonFromBrowser() {
+        return "Get some Foos with Header Old";
+    }
+
+    @RequestMapping(
+            value = "/ex/foos",
+            method = RequestMethod.GET,
+            produces = "application/json"
+    )
+    @ResponseBody
+    public String getFoosAsJsonFromREST() {
+        return "Get some Foos with Header New";
+    }
+
 }
