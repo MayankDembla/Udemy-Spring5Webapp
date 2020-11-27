@@ -87,23 +87,23 @@ public class BaseController {
         return "Get some Foos with Header";
     }
 
-    @RequestMapping(
-            value = "/ex/foos",
-            method = RequestMethod.GET,
-            headers = "Accept=application/json")
-    @ResponseBody
-    public String getFoosAsJsonFromBrowser() {
-        return "Get some Foos with Header Old";
-    }
-
-    @RequestMapping(
-            value = "/ex/foos",
-            method = RequestMethod.GET,
-            produces = "application/json"
-    )
-    @ResponseBody
-    public String getFoosAsJsonFromREST() {
-        return "Get some Foos with Header New";
-    }
+//    @RequestMapping(
+//            value = "/ex/foos",
+//            method = RequestMethod.GET,
+//            headers = "Accept=application/json")
+//    @ResponseBody
+//    public String getFoosAsJsonFromBrowser() {
+//        return "Get some Foos with Header Old";
+//    }
+//
+//    @RequestMapping(
+//            value = "/ex/foos",
+//            method = RequestMethod.GET,
+//            produces = "application/json"
+//    )
+//    @ResponseBody
+//    public String getFoosAsJsonFromREST() {
+//        return "Get some Foos with Header New";
+//    }
 
 }
