@@ -19,6 +19,7 @@ public class OwnerController {
     @RequestMapping({"", "/", "/index", "/index.html"})
     public String getOwner(Model model) {
 
+        System.out.println(ownerService.findAll());
         model.addAttribute("owners", ownerService.findAll());
 
         return "/owner/index";
