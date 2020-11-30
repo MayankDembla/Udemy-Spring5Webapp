@@ -1,6 +1,7 @@
 package com.ayan.spring.webapp.bootstrap;
 
 import com.ayan.spring.webapp.model.Owner;
+import com.ayan.spring.webapp.model.Pet;
 import com.ayan.spring.webapp.model.PetType;
 import com.ayan.spring.webapp.model.Vet;
 import com.ayan.spring.webapp.services.PetTypeService;
@@ -8,6 +9,8 @@ import com.ayan.spring.webapp.services.map.OwnerMapService;
 import com.ayan.spring.webapp.services.map.VetMapService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -30,18 +33,23 @@ public class DataLoader implements CommandLineRunner {
         loadPetType();
     }
 
+    Owner owner1 = new Owner();
+    Owner owner2 = new Owner();
+
     private void loadOwners() {
 
-        Owner owner1 = new Owner();
         owner1.setFirstName("Mayank");
         owner1.setLastName("Dembla");
-
+        owner1.setAddress("2b/l, new colony");
+        owner1.setCity("Palwal");
+        owner1.setTelephone("870871233");
         ownerService.save(owner1);
 
-        Owner owner2 = new Owner();
         owner2.setFirstName("Jatin");
         owner2.setLastName("Dembla");
-
+        owner2.setAddress("2b/l new, new colony");
+        owner2.setCity("Gurugram");
+        owner2.setTelephone("720617656");
         ownerService.save(owner2);
 
         System.out.println("Loaded Owners....");
@@ -65,19 +73,42 @@ public class DataLoader implements CommandLineRunner {
 
     }
 
+    PetType saveDogPetType = null;
+    PetType saveCatPetType = null;
+
     private void loadPetType() {
 
         PetType dog = new PetType();
         dog.setName("Dog");
-        PetType saveDogPetType = petTypeService.save(dog);
+        saveDogPetType = petTypeService.save(dog);
 
         PetType cat = new PetType();
         dog.setName("Cat");
-        PetType saveCatPetType = petTypeService.save(cat);
+        saveCatPetType = petTypeService.save(cat);
 
         System.out.println("Loaded PetType ... ");
 
+
     }
 
+    public void loadpet() {
+
+        Pet mikesPet = new Pet();
+        mikesPet.setPetType(saveDogPetType);
+        mikesPet.setOwner(owner1);
+        mikesPet.setBirthDate(LocalDate.now());
+        mikesPet.setName("Rosco");
+
+        owner1.getPets().add(mikesPet);
+
+        Pet finosCat = new Pet();
+        finosCat.setPetType(saveCatPetType);
+        finosCat.setOwner(owner2);
+        finosCat.setBirthDate(LocalDate.now());
+        finosCat.setName("KateUpon");
+
+        owner2.getPets().add(finosCat);
+
+    }
 
 }

@@ -2,6 +2,7 @@ package com.ayan.spring.webapp.model;
 
 import lombok.Data;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Data
@@ -10,7 +11,7 @@ public class Owner extends Person {
     private String address;
     private String city;
     private String telephone;
-    private Set<Pet> pets;
+    private Set<Pet> pets = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {
