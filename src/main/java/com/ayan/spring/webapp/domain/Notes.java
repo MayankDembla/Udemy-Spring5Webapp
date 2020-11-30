@@ -10,9 +10,9 @@ public class Notes {
     private Long id;
 
     @OneToOne
-    private Recipe recepie;
+    private Recipe recipe;
 
     @Lob
-    private String receipeNotes;
+    private String recipeNotes;
 
 }
