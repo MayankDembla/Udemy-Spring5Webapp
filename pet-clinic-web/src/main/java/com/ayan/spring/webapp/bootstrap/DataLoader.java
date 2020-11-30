@@ -1,10 +1,8 @@
 package com.ayan.spring.webapp.bootstrap;
 
-import com.ayan.spring.webapp.model.Owner;
-import com.ayan.spring.webapp.model.Pet;
-import com.ayan.spring.webapp.model.PetType;
-import com.ayan.spring.webapp.model.Vet;
+import com.ayan.spring.webapp.model.*;
 import com.ayan.spring.webapp.services.PetTypeService;
+import com.ayan.spring.webapp.services.SpecialityServices;
 import com.ayan.spring.webapp.services.map.OwnerMapService;
 import com.ayan.spring.webapp.services.map.VetMapService;
 import org.springframework.boot.CommandLineRunner;
@@ -18,19 +16,23 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerMapService ownerService;
     private final VetMapService vetService;
     private final PetTypeService petTypeService;
+    private final SpecialityServices specialtyService;
 
-    public DataLoader(OwnerMapService ownerService, VetMapService vetService, PetTypeService petTypeService) {
+    public DataLoader(OwnerMapService ownerService, VetMapService vetService, PetTypeService petTypeService, SpecialityServices specialtyService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.specialtyService = specialtyService;
     }
 
     @Override
     public void run(String... args) throws Exception {
 
         loadOwners();
-        loadVets();
+        loadspecialityandthenvets();
         loadPetType();
+        loadpet();
+
     }
 
     Owner owner1 = new Owner();
@@ -60,13 +62,13 @@ public class DataLoader implements CommandLineRunner {
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
         vet1.setLastName("Axe");
-
+        vet1.getSpecialities().add(savedRadiology);
         vetService.save(vet1);
 
         Vet vet2 = new Vet();
         vet2.setFirstName("Jessie");
         vet2.setLastName("Porter");
-
+        vet2.getSpecialities().add(savedSurgery);
         vetService.save(vet2);
 
         System.out.println("Loaded Vets ... ");
@@ -109,6 +111,31 @@ public class DataLoader implements CommandLineRunner {
 
         owner2.getPets().add(finosCat);
 
+    }
+
+    Speciality savedRadiology = null;
+    Speciality savedSurgery = null;
+    Speciality savedDentistry = null;
+
+    public void loadSpeciality() {
+
+        Speciality radiology = new Speciality();
+        radiology.setDescription("Radiology");
+        savedRadiology = specialtyService.save(radiology);
+
+        Speciality surgery = new Speciality();
+        surgery.setDescription("Surgery");
+        savedSurgery = specialtyService.save(surgery);
+
+        Speciality dentistry = new Speciality();
+        dentistry.setDescription("dentistry");
+        savedDentistry = specialtyService.save(dentistry);
+
+    }
+
+    public void loadspecialityandthenvets() {
+        loadSpeciality();
+        loadVets();
     }
 
 }
