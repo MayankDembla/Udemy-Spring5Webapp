@@ -21,6 +21,7 @@ public class Recipe {
     private String url;
     private String directions;
 
+    @Enumerated(value = EnumType.STRING)  // Ordinal (default - index) and String (String)
     private Difficulty difficulty;
 
     @Lob
