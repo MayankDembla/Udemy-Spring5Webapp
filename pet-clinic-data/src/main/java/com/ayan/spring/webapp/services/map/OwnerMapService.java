@@ -5,12 +5,14 @@ import com.ayan.spring.webapp.model.Pet;
 import com.ayan.spring.webapp.services.OwnerService;
 import com.ayan.spring.webapp.services.PetService;
 import com.ayan.spring.webapp.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;

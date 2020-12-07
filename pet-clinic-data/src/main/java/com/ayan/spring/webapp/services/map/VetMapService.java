@@ -4,11 +4,13 @@ import com.ayan.spring.webapp.model.Speciality;
 import com.ayan.spring.webapp.model.Vet;
 import com.ayan.spring.webapp.services.SpecialityServices;
 import com.ayan.spring.webapp.services.VetService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
     private final SpecialityServices specialityServices;

@@ -1,12 +1,7 @@
 package com.ayan.spring.webapp.bootstrap;
 
 import com.ayan.spring.webapp.model.*;
-import com.ayan.spring.webapp.services.PetService;
-import com.ayan.spring.webapp.services.PetTypeService;
-import com.ayan.spring.webapp.services.SpecialityServices;
-import com.ayan.spring.webapp.services.VisitService;
-import com.ayan.spring.webapp.services.map.OwnerMapService;
-import com.ayan.spring.webapp.services.map.VetMapService;
+import com.ayan.spring.webapp.services.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,14 +10,14 @@ import java.time.LocalDate;
 @Component
 public class DataLoader implements CommandLineRunner {
 
-    private final OwnerMapService ownerService;
-    private final VetMapService vetService;
+    private final OwnerService ownerService;
+    private final VetService vetService;
     private final PetTypeService petTypeService;
     private final PetService petService;
     private final SpecialityServices specialtyService;
     private final VisitService visitService;
 
-    public DataLoader(OwnerMapService ownerService, VetMapService vetService, PetTypeService petTypeService, PetService petService, SpecialityServices specialtyService, VisitService visitService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, PetService petService, SpecialityServices specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
