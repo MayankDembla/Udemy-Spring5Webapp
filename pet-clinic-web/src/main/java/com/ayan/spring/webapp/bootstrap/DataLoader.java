@@ -1,8 +1,10 @@
 package com.ayan.spring.webapp.bootstrap;
 
 import com.ayan.spring.webapp.model.*;
+import com.ayan.spring.webapp.services.PetService;
 import com.ayan.spring.webapp.services.PetTypeService;
 import com.ayan.spring.webapp.services.SpecialityServices;
+import com.ayan.spring.webapp.services.VisitService;
 import com.ayan.spring.webapp.services.map.OwnerMapService;
 import com.ayan.spring.webapp.services.map.VetMapService;
 import org.springframework.boot.CommandLineRunner;
@@ -16,13 +18,17 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerMapService ownerService;
     private final VetMapService vetService;
     private final PetTypeService petTypeService;
+    private final PetService petService;
     private final SpecialityServices specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerMapService ownerService, VetMapService vetService, PetTypeService petTypeService, SpecialityServices specialtyService) {
+    public DataLoader(OwnerMapService ownerService, VetMapService vetService, PetTypeService petTypeService, PetService petService, SpecialityServices specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
+        this.petService = petService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -32,6 +38,7 @@ public class DataLoader implements CommandLineRunner {
         loadspecialityandthenvets();
         loadPetType();
         loadpet();
+        loadVisits();
 
     }
 
@@ -56,6 +63,7 @@ public class DataLoader implements CommandLineRunner {
 
         System.out.println("Loaded Owners....");
     }
+
 
     private void loadVets() {
 
@@ -93,9 +101,11 @@ public class DataLoader implements CommandLineRunner {
 
     }
 
+    Pet mikesPet = new Pet();
+    Pet finosCat = new Pet();
+
     public void loadpet() {
 
-        Pet mikesPet = new Pet();
         mikesPet.setPetType(saveDogPetType);
         mikesPet.setOwner(owner1);
         mikesPet.setBirthDate(LocalDate.now());
@@ -103,7 +113,7 @@ public class DataLoader implements CommandLineRunner {
 
         owner1.getPets().add(mikesPet);
 
-        Pet finosCat = new Pet();
+
         finosCat.setPetType(saveCatPetType);
         finosCat.setOwner(owner2);
         finosCat.setBirthDate(LocalDate.now());
@@ -111,6 +121,22 @@ public class DataLoader implements CommandLineRunner {
 
         owner2.getPets().add(finosCat);
 
+        petService.save(finosCat);
+        petService.save(mikesPet);
+        System.out.println("Loaded Pets ... ");
+
+    }
+
+
+    private void loadVisits() {
+        Visit catVisit = new Visit();
+        catVisit.setPet(finosCat);
+        catVisit.setLocalDate(LocalDate.now());
+        catVisit.setDescription("Sneezy Kitty");
+
+        visitService.save(catVisit);
+
+        System.out.println("Loaded Cat Visit ... ");
     }
 
     Speciality savedRadiology = null;

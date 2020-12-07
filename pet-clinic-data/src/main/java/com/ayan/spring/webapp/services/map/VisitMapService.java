@@ -2,9 +2,11 @@ package com.ayan.spring.webapp.services.map;
 
 import com.ayan.spring.webapp.model.Visit;
 import com.ayan.spring.webapp.services.VisitService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VisitMapService extends AbstractMapService<Visit, Long> implements VisitService {
 
     @Override
