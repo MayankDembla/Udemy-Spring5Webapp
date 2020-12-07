@@ -1,8 +1,10 @@
 package com.ayan.spring.webapp.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class Speciality extends BaseEntity {
 
     String description;
