@@ -1,8 +1,13 @@
 package com.ayan.spring.webapp.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
 public class Notes {
 
     @Id
@@ -14,5 +19,4 @@ public class Notes {
 
     @Lob
     private String recipeNotes;
-
 }
