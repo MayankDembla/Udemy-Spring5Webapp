@@ -8,6 +8,7 @@ import com.ayan.spring.webapp.services.PetTypeService;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
@@ -64,4 +65,23 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
     public Set<Owner> findAll() {
         return super.findAll();
     }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return this.findAll()
+                .stream()
+                .filter(owner -> owner.getLastName().equals(lastName))
+                .findFirst()
+                .orElse(null);
+    }
+
+    @Override
+    public Set<Owner> findAllByLastName(String lastName) {
+        return this.findAll()
+                .stream()
+                .filter(owner -> owner.getLastName().equals(lastName))
+                .collect(Collectors.toSet());
+    }
+
+
 }
