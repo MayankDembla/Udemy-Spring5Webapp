@@ -1,6 +1,8 @@
 package com.ayan.spring.webapp.model;
 
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -9,6 +11,8 @@ import java.util.Set;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "vets")
 public class Vet extends Person {
