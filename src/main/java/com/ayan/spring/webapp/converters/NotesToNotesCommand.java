@@ -14,7 +14,7 @@ public class NotesToNotesCommand implements Converter<Notes, NotesCommand> {
     @Nullable
     @Override
     public NotesCommand convert(Notes source) {
-        if (source.equals(null)) {
+        if (source == null) {
             return null;
         }
 
