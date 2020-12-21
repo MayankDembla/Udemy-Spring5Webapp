@@ -1,10 +1,14 @@
 package com.ayan.spring.webapp.services;
 
+import com.ayan.spring.webapp.commands.RecipeCommand;
+import com.ayan.spring.webapp.converters.RecipeCommandToRecipe;
+import com.ayan.spring.webapp.converters.RecipeToRecipeCommand;
 import com.ayan.spring.webapp.domain.Recipe;
 import com.ayan.spring.webapp.repositories.RecipeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -14,9 +18,13 @@ import java.util.Set;
 public class RecipeServiceImpl implements RecipeService {
 
     private final RecipeRepository recipeRepository;
+    private final RecipeCommandToRecipe toRecipe;
+    private final RecipeToRecipeCommand toRecipeCommand;
 
-    public RecipeServiceImpl(RecipeRepository recipeRepository) {
+    public RecipeServiceImpl(RecipeRepository recipeRepository, RecipeCommandToRecipe toRecipe, RecipeToRecipeCommand toRecipeCommand) {
         this.recipeRepository = recipeRepository;
+        this.toRecipe = toRecipe;
+        this.toRecipeCommand = toRecipeCommand;
     }
 
     @Override
@@ -37,6 +45,17 @@ public class RecipeServiceImpl implements RecipeService {
             throw new RuntimeException("Recipe Not Found");
 
         return recipeOptional.get();
+    }
+
+    @Override
+    @Transactional
+    public RecipeCommand saveRecipeCommand(RecipeCommand recipeCommand) {
+        Recipe detachedRecipe = toRecipe.convert(recipeCommand);
+
+        Recipe savedRecipe = recipeRepository.save(detachedRecipe);
+        log.debug("Saved Recipe : " + savedRecipe);
+
+        return toRecipeCommand.convert(savedRecipe);
     }
 
 }

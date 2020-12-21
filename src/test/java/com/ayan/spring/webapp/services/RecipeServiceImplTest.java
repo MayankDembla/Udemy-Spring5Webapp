@@ -1,5 +1,7 @@
 package com.ayan.spring.webapp.services;
 
+import com.ayan.spring.webapp.converters.RecipeCommandToRecipe;
+import com.ayan.spring.webapp.converters.RecipeToRecipeCommand;
 import com.ayan.spring.webapp.domain.Recipe;
 import com.ayan.spring.webapp.repositories.RecipeRepository;
 import org.junit.Before;
@@ -22,10 +24,16 @@ public class RecipeServiceImplTest {
     @Mock
     RecipeRepository recipeRepository;
 
+    @Mock
+    RecipeCommandToRecipe toRecipe;
+
+    @Mock
+    RecipeToRecipeCommand toRecipeCommand;
+
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        recipeService = new RecipeServiceImpl(recipeRepository);
+        recipeService = new RecipeServiceImpl(recipeRepository, toRecipe, toRecipeCommand);
     }
 
     @Test

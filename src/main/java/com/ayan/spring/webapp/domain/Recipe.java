@@ -1,12 +1,14 @@
 package com.ayan.spring.webapp.domain;
 
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Data
+@ToString(exclude = {"ingredients", "categories", "notes"})
 @Entity
 public class Recipe {
 
