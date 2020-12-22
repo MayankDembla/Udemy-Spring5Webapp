@@ -80,10 +80,10 @@ public class RecipeControllerTest {
     @Test
     public void getTestUpdateView() throws Exception {
 
-        Recipe recipe = new Recipe();
+        RecipeCommand recipe = new RecipeCommand();
         recipe.setId(2L);
 
-        when(recipeService.findById(anyLong())).thenReturn(recipe);
+        when(recipeService.findCommandById(anyLong())).thenReturn(recipe);
 
         mockMvc.perform(get("/recipe/2/update"))
                 .andExpect(status().isOk())
