@@ -2,31 +2,39 @@ package com.ayan.spring.webapp.converters;
 
 import com.ayan.spring.webapp.commands.IngredientCommand;
 import com.ayan.spring.webapp.domain.Ingredient;
+import lombok.Synchronized;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.lang.Nullable;
 import org.springframework.stereotype.Component;
 
+@Slf4j
 @Component
 public class IngredientToIngredientCommand implements Converter<Ingredient, IngredientCommand> {
 
-    final UnitOfMeasureToUnitOfMeasureCommand converter;
+    private final UnitOfMeasureToUnitOfMeasureCommand uomConverter;
 
-    public IngredientToIngredientCommand(UnitOfMeasureToUnitOfMeasureCommand converter) {
-        this.converter = converter;
+    public IngredientToIngredientCommand(UnitOfMeasureToUnitOfMeasureCommand uomConverter) {
+        this.uomConverter = uomConverter;
     }
 
+    @Synchronized
     @Nullable
     @Override
-    public IngredientCommand convert(Ingredient source) {
-
-        if (source == null)
+    public IngredientCommand convert(Ingredient ingredient) {
+        if (ingredient == null) {
+            log.debug("Null Ingredient !! ");
             return null;
+        }
 
         IngredientCommand ingredientCommand = new IngredientCommand();
-        ingredientCommand.setId(source.getId());
-        ingredientCommand.setAmount(source.getAmount());
-        ingredientCommand.setDescription(source.getDescription());
-        ingredientCommand.setUnitOfMeasure(converter.convert(source.getUnitOfMeasure()));
+        ingredientCommand.setId(ingredient.getId());
+        if (ingredient.getRecipe() != null) {
+            ingredientCommand.setRecipeId(ingredient.getRecipe().getId());
+        }
+        ingredientCommand.setAmount(ingredient.getAmount());
+        ingredientCommand.setDescription(ingredient.getDescription());
+        ingredientCommand.setUnitOfMeasure(uomConverter.convert(ingredient.getUnitOfMeasure()));
 
         return ingredientCommand;
     }
