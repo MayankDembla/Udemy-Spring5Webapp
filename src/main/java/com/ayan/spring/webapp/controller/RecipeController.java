@@ -5,7 +5,10 @@ import com.ayan.spring.webapp.services.RecipeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Slf4j
 @Controller
@@ -17,7 +20,7 @@ public class RecipeController {
         this.recipeService = recipeService;
     }
 
-    @RequestMapping("/recipe/{id}/show")
+    @GetMapping("/recipe/{id}/show")
     public String showById(@PathVariable String id, Model model) {
 
         model.addAttribute("recipe", recipeService.findById(Long.valueOf(id)));
@@ -46,8 +49,7 @@ public class RecipeController {
         return "redirect:/recipe/" + savedCommand.getId() + "/show";
     }
 
-    @GetMapping
-    @RequestMapping("/recipe/{id}/delete")
+    @GetMapping("/recipe/{id}/delete")
     public String deleteByID(@PathVariable Long id) {
 
         log.debug("Deleting id: " + id);
