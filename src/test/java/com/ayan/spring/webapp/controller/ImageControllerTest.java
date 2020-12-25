@@ -58,7 +58,7 @@ public class ImageControllerTest {
     @Test
     public void handleImagePost() throws Exception {
 
-        MockMultipartFile mockMultipartFile = new MockMultipartFile("file",
+        MockMultipartFile mockMultipartFile = new MockMultipartFile("imagefile",
                 "testing.txt",
                 "text/plain", "Spring Framweork".getBytes());
 
