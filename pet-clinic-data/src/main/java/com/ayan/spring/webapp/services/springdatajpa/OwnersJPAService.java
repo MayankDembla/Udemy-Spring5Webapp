@@ -3,13 +3,16 @@ package com.ayan.spring.webapp.services.springdatajpa;
 import com.ayan.spring.webapp.model.Owner;
 import com.ayan.spring.webapp.repositories.OwnerRepository;
 import com.ayan.spring.webapp.services.OwnerService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
+@Slf4j
 @Service
 @Profile("springdatajpa")
 public class OwnersJPAService implements OwnerService {
@@ -56,5 +59,11 @@ public class OwnersJPAService implements OwnerService {
     @Override
     public Set<Owner> findAllByLastName(String lastName) {
         return ownerRepository.findAllByLastName(lastName);
+    }
+
+    @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        log.debug("Find Owner " + ownerRepository.findAllByLastNameLike(lastName));
+        return ownerRepository.findAllByLastNameLike(lastName);
     }
 }
