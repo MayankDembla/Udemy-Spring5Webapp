@@ -74,6 +74,7 @@ class VisitControllerTest {
         mockMvc = MockMvcBuilders
                 .standaloneSetup(visitController)
                 .build();
+
     }
 
     @Test
