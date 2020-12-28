@@ -3,6 +3,7 @@ package com.ayan.spring.webapp.services;
 import com.ayan.spring.webapp.converters.RecipeCommandToRecipe;
 import com.ayan.spring.webapp.converters.RecipeToRecipeCommand;
 import com.ayan.spring.webapp.domain.Recipe;
+import com.ayan.spring.webapp.exception.NotFoundException;
 import com.ayan.spring.webapp.repositories.RecipeRepository;
 import org.junit.Before;
 import org.junit.Test;
@@ -65,6 +66,17 @@ public class RecipeServiceImplTest {
 
         verify(recipeRepository, times(1)).findById(anyLong());
         verify(recipeRepository, never()).findAll();
+
+    }
+
+    @Test(expected = NotFoundException.class)
+    public void getRecipeByIdNotFound() throws Exception {
+
+        Optional<Recipe> recipeOptional = Optional.empty();
+
+        when(recipeRepository.findById(anyLong())).thenReturn(recipeOptional);
+
+        Recipe recipeReturned = recipeService.findById(1L);
 
     }
 
