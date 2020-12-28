@@ -18,6 +18,7 @@ import javax.validation.Valid;
 public class RecipeController {
 
     private final RecipeService recipeService;
+    private static final String RECIPE_RECIPEFORM_URL = "recipe/recipeform";
 
     public RecipeController(RecipeService recipeService) {
         this.recipeService = recipeService;
@@ -44,16 +45,19 @@ public class RecipeController {
         return "/recipe/recipeform";
     }
 
-    @PostMapping("/recipe")
-    public String saveOrUpdate(@Valid @ModelAttribute RecipeCommand recipe, BindingResult bindingResult) {
+    @PostMapping("recipe")
+    public String saveOrUpdate(@Valid @ModelAttribute("recipe") RecipeCommand command, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
+
             bindingResult.getAllErrors().forEach(objectError -> {
                 log.debug(objectError.toString());
             });
+
+            return RECIPE_RECIPEFORM_URL;
         }
 
-        RecipeCommand savedCommand = recipeService.saveRecipeCommand(recipe);
+        RecipeCommand savedCommand = recipeService.saveRecipeCommand(command);
 
         return "redirect:/recipe/" + savedCommand.getId() + "/show";
     }
