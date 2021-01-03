@@ -21,3 +21,7 @@ To insatll Java :
 yum install java
 
 To Run the Docker File on local system docker build -t spring-boot-docker .
+
+# Code Coverage
+
+[![codecov](https://codecov.io/gh/MayankDembla/Udemy-Spring5Webapp/branch/main/graph/badge.svg?token=RJ5KFNHJMK)](https://codecov.io/gh/MayankDembla/Udemy-Spring5Webapp)
