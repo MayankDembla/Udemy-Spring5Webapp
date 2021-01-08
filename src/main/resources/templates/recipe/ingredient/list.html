@@ -35,8 +35,8 @@
                                th:href="@{'/recipe/' + ${recipe.id} + '/ingredient/new'}">New</a>
                         </div>
                     </div>
-                </div>
 
+                </div>
                 <div class="panel-body">
 
                     <div class="table-responsive" th:if="${not #lists.isEmpty(recipe.ingredients)}">
@@ -66,7 +66,7 @@
                             </tr>
                             <tr th:each="ingredient : ${recipe.ingredients}">
                                 <td th:text="${ingredient.id}">334</td>
-                                <td th:text="${ingredient.amount} + ' ' + ${ingredient.unitOfMeasure.getDescription()} + ' ' + ${ingredient.description}">
+                                <td th:text="${ingredient.amount} + ' ' + ${ingredient.uom.getDescription()} + ' ' + ${ingredient.description}">
                                     Tasty Goodnees 3
                                 </td>
                                 <td><a href="#"
@@ -86,6 +86,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>

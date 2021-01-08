@@ -1,27 +1,12 @@
-# Udemy-Spring5Webapp
+[![CircleCI](https://circleci.com/gh/springframeworkguru/spring5-mongo-recipe-app.svg?style=svg)](https://circleci.com/gh/springframeworkguru/spring5-mongo-recipe-app)
 
-Learning Spring
+[![codecov](https://codecov.io/gh/springframeworkguru/spring5-mongo-recipe-app/branch/master/graph/badge.svg)](https://codecov.io/gh/springframeworkguru/spring5-mongo-recipe-app)
 
-https://springframework.guru/docker-cheat-sheet-for-spring-devlopers/
+# spring5-mongo-recipe-app
 
-# Ubuntu
+Recipe Application Using MongoDB
 
-1. Start docker -
+This repository is for an example application built in my Spring Framework 5 - Beginner to Guru
 
-   sudo service docker start
-
-2. Running CentOS
-
-Get Centos Container docker run -d centos tail -f /dev/null
-
-To open BAsh :
-docker exec -it sweet_franklin bash
-
-To insatll Java :
-yum install java
-
-To Run the Docker File on local system docker build -t spring-boot-docker .
-
-# Code Coverage
-
-[![codecov](https://codecov.io/gh/MayankDembla/Udemy-Spring5Webapp/branch/main/graph/badge.svg?token=RJ5KFNHJMK)](https://codecov.io/gh/MayankDembla/Udemy-Spring5Webapp)
+You can learn about my Spring Framework 5 Online
+course [here.](http://courses.springframework.guru/p/spring-framework-5-begginer-to-guru/?product_id=363173)

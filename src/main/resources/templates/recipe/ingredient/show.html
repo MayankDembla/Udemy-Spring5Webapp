@@ -34,8 +34,6 @@
                             <thead class="thead-inverse">
                             <tr>
                                 <th>ID</th>
-                                <th>Amount</th>
-                                <th>Unit of Measure</th>
                                 <th>Description</th>
                             </tr>
                             </thead>
@@ -48,9 +46,9 @@
                             </tr>
                             <tr>
                                 <td th:text="${ingredient.id}">334</td>
-                                <td th:text="${ingredient.amount}">Tasty Goodnees 3</td>
-                                <td th:text="${ingredient.unitOfMeasure.getDescription()}">TableSpoon</td>
-                                <td th:text="${ingredient.description}">Kosher salt</td>
+                                <td th:text="${ingredient.amount} + ' ' + ${ingredient.uom.getDescription()} + ' ' + ${ingredient.description}">
+                                    Tasty Goodnees 3
+                                </td>
                             </tr>
                         </table>
                     </div>
